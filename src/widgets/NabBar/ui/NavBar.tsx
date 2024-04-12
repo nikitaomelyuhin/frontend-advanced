@@ -1,8 +1,9 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './NavBar.module.scss'
 import React from "react";
-import {AppRoutes, RoutePath} from "@/app/config/configRouter/configRouter";
 import {AppLink} from "@/shared/ui/AppLink/AppLink";
+import {AppRoutes, RoutePath} from "@/shared/constants/router";
+import {ThemeSwitcher} from "@/shared/ui/ThemeSwitcher/ThemeSwitcher";
 
 interface NavBarProps {
     className?: string;
@@ -25,6 +26,8 @@ export const NavBar = (props: NavBarProps) => {
             >
                 aboutPage
             </AppLink>
+            <ThemeSwitcher />
+            
         </div>
     );
 };

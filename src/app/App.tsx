@@ -7,16 +7,12 @@ import {AppRouter} from "@/shared/providers/AppRouter";
 import {NavBar} from "@/widgets/NabBar";
 
 const App = () => {
-    const { theme, toggleTheme } = useTheme()
+    const { theme } = useTheme()
 
     return (
         <div className={classNames('app', {}, [theme])}>
             <NavBar/>
             <AppRouter/>
-            <button onClick={toggleTheme}>changeTheme</button>
-            <br/>
-
-
         </div>
     );
 };
