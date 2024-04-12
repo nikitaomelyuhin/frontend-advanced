@@ -3,7 +3,7 @@ import cls from './NavBar.module.scss'
 import React from "react";
 import {AppLink} from "@/shared/ui/AppLink/AppLink";
 import {AppRoutes, RoutePath} from "@/shared/constants/router";
-import {ThemeSwitcher} from "@/shared/ui/ThemeSwitcher/ThemeSwitcher";
+import {ThemeSwitcher} from "@/features/ThemeSwitcher";
 
 interface NavBarProps {
     className?: string;
@@ -27,7 +27,7 @@ export const NavBar = (props: NavBarProps) => {
                 aboutPage
             </AppLink>
             <ThemeSwitcher />
-            
+
         </div>
     );
 };
