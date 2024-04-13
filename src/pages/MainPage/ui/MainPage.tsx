@@ -1,6 +1,6 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './MainPage.module.scss'
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './MainPage.module.scss';
 
 interface MainPageProps {
     className?: string;

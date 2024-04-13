@@ -1,11 +1,11 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './SideBar.module.scss'
-import {Button} from "@/shared/ui/Button/Button";
-import {useState} from "react";
+import { useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './SideBar.module.scss';
+import { Button } from '@/shared/ui/Button/Button';
 import SvgArrowLeft from '@/shared/assets/icons/arrow-left.svg';
 import SvgArrowRight from '@/shared/assets/icons/arrow-right.svg';
-import {LangSwitcher} from "@/features/LangSwitcher";
-import {ThemeSwitcher} from "@/features/ThemeSwitcher";
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
 interface SideBarProps {
     className?: string;
@@ -16,20 +16,19 @@ export const SideBar = (props: SideBarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleBar = () => {
-        setCollapsed(prev => !prev);
-    }
+        setCollapsed((prev) => !prev);
+    };
 
     return (
-        <div className={classNames(cls.SideBar, {[cls.collapsed]: collapsed}, [className])}>
+        <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
             <Button
                 onClick={toggleBar}
                 className={cls.button}
-                theme={'clear'}
+                theme="clear"
             >
-                {collapsed ?
-                    <SvgArrowRight className={classNames(cls.icon)}/>:
-                    <SvgArrowLeft className={classNames(cls.icon)}/>
-                }
+                {collapsed
+                    ? <SvgArrowRight className={classNames(cls.icon)} />
+                    : <SvgArrowLeft className={classNames(cls.icon)} />}
             </Button>
             <div className={classNames(cls.footer)}>
                 <ThemeSwitcher />
