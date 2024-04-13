@@ -1,9 +1,18 @@
-import React from 'react';
+import {classNames} from "@/shared/lib/classNames/classNames";
+import cls from './MainPage.module.scss'
+import {useTranslation} from "react-i18next";
 
-const MainPage = () => {
+interface MainPageProps {
+    className?: string;
+}
+
+const MainPage = (props: MainPageProps) => {
+    const { className } = props;
+    const { t } = useTranslation();
+
     return (
-        <div>
-            Main Page
+        <div className={classNames(cls.MainPage, {}, [className])}>
+            {t('Main page')}
         </div>
     );
 };
