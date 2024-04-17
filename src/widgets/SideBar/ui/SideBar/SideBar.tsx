@@ -20,11 +20,15 @@ export const SideBar = (props: SideBarProps) => {
     };
 
     return (
-        <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
+        <div
+            data-testid="SideBar"
+            className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
+        >
             <Button
                 onClick={toggleBar}
                 className={cls.button}
                 theme="clear"
+                data-testid="side-bar-button"
             >
                 {collapsed
                     ? <SvgArrowRight className={classNames(cls.icon)} />
