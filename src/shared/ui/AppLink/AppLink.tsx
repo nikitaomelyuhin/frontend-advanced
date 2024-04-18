@@ -3,17 +3,15 @@ import { FC } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
 
-const Themes = {
-    primary: 'primary',
-    inverted: 'inverted',
-} as const;
-
-type LinkTheme = keyof typeof Themes;
+export enum AppLinkThemes {
+    PRIMARY = 'primary',
+    INVERTED = 'inverted',
+}
 
 interface AppLinkProps extends LinkProps {
     className?: string;
     to: string;
-    theme?: LinkTheme;
+    theme?: AppLinkThemes;
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {
@@ -21,7 +19,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
         className,
         to,
         children,
-        theme = Themes.primary,
+        theme = AppLinkThemes.PRIMARY,
         ...otherProps
     } = props;
 

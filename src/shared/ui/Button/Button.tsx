@@ -2,15 +2,14 @@ import { FC, HTMLAttributes } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-const Themes = {
-    clear: 'clear',
-} as const;
-
-type ButtonTheme = keyof typeof Themes;
+export enum ButtonThemes {
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
+}
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme: ButtonTheme;
+    theme: ButtonThemes;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
