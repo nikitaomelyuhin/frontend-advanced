@@ -12,22 +12,9 @@ interface NavBarProps {
 export const Header = (props: NavBarProps) => {
     const { className } = props;
 
-    const { t } = useTranslation(['translation', 'about']);
-
     return (
         <div className={classNames(cls.NavBar, {}, [className])}>
-            <AppLink
-                to={RoutePath[AppRoutes.MAIN]}
-                theme={AppLinkThemes.PRIMARY}
-            >
-                {t('Main page')}
-            </AppLink>
-            <AppLink
-                to={RoutePath[AppRoutes.ABOUT]}
-                theme={AppLinkThemes.PRIMARY}
-            >
-                {t('About page', { ns: 'about' })}
-            </AppLink>
+            /
         </div>
     );
 };
