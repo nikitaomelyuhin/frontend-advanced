@@ -12,4 +12,19 @@
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+
+    // colors
+
+    --overlay: rgba(0, 0, 0, 0.8);
+
+    // z-indexes
+
+    --z-main: 50;
+    --z-select: 2000;
+    --z-nav: 3000;
+    --z-header: 4000;
+    --z-other: 5000;
+    --z-modal-backdrop: 7999;
+    --z-modal: 8000;
+    --z-notification: 9000;
 }

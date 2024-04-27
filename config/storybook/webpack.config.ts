@@ -33,5 +33,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
     });
     config.module.rules.push(buildCssLoader(true));
 
+    config.resolveLoader;
+
     return config;
 };

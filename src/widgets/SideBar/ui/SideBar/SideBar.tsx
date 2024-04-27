@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SideBar.module.scss';
@@ -12,6 +12,7 @@ import { AppLink, AppLinkThemes } from '@/shared/ui/AppLink/AppLink';
 import { AppRoutes, RoutePath } from '@/shared/constants/router';
 import SvgHome from '@/shared/assets/icons/home.svg';
 import SvgAbout from '@/shared/assets/icons/about.svg';
+import { Modal } from '@/shared/ui/Modal/Modal';
 
 interface SideBarProps {
     className?: string;
@@ -23,10 +24,19 @@ export const SideBar = (props: SideBarProps) => {
     const { t } = useTranslation(['translation', 'about']);
 
     const [collapsed, setCollapsed] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleBar = () => {
         setCollapsed((prev) => !prev);
     };
+
+    const openModal = useCallback(() => {
+        setIsOpen(true);
+    }, []);
+
+    const closeModal = useCallback(() => {
+        setIsOpen(false);
+    }, []);
 
     return (
         <div
@@ -34,6 +44,10 @@ export const SideBar = (props: SideBarProps) => {
             className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
         >
             <div className={cls.nav}>
+                <button onClick={openModal}>openModal</button>
+                <Modal isOpen={isOpen} onClose={closeModal}>
+                    123
+                </Modal>
                 <AppLink
                     className={cls.item}
                     to={RoutePath[AppRoutes.MAIN]}

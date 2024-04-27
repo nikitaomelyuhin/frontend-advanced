@@ -1,0 +1,26 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import { ThemeDecorator } from '@/app/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/providers/ThemeProvider';
+import { Modal } from './Modal';
+
+export default {
+    title: 'shared/Modal',
+    component: Modal,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Modal>;
+
+const Template: ComponentStory<typeof Modal> = (args) => (
+    <div className="app">
+        <Modal {...args} />
+    </div>
+);
+
+export const Default = Template.bind({});
+Default.args = {
+    isOpen: true,
+    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\\n ',
+};
