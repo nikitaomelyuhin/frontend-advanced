@@ -11,16 +11,24 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [ThemeDecorator(Theme.NORMAL)],
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => (
-    <div className="app">
-        <Modal {...args} />
-    </div>
+    <Modal {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Normal = Template.bind({});
+Normal.args = {
     isOpen: true,
-    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.\\n ',
+    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.',
 };
+
+export const Dark = Template.bind({});
+
+Dark.args = {
+    isOpen: true,
+    children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.',
+};
+
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

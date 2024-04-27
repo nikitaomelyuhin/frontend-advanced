@@ -12,7 +12,7 @@ export const Portal = (props: PortalProps) => {
         domNode,
     } = props;
 
-    const root = domNode ?? document.querySelector('.app');
+    const root = domNode ?? document.getElementById('app') ?? document.body;
 
     return (
         createPortal(
