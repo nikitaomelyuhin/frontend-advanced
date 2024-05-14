@@ -2,6 +2,9 @@ import type { Config } from '@jest/types';
 import path from 'path';
 
 const config: Config.InitialOptions = {
+    globals: {
+        __IS_DEV__: true,
+    },
     preset: 'ts-jest',
     testEnvironment: 'jsdom',
     clearMocks: true,
