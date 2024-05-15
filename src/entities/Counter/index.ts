@@ -1,5 +1,5 @@
 export { Counter } from './ui/Counter';
 
-export { CounterSchema } from './types/counterSchema';
+export { CounterSchema } from '@/entities/Counter/model/types/counterSchema';
 
-export { counterReducer } from './slice/counterSlice';
+export { counterReducer } from '@/entities/Counter/model/slice/counterSlice';

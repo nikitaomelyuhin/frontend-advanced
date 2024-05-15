@@ -4,8 +4,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Counter.module.scss';
 import { Button } from '@/shared/ui/Button/Button';
 import { ButtonThemes } from '@/shared/ui/Button/Button.types';
-import { getCounterValue } from '@/entities/Counter/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '@/entities/Counter/slice/counterSlice';
+import { getCounterValue } from '@/entities/Counter/model/selectors/getCounterValue/getCounterValue';
+import { counterActions } from '@/entities/Counter/model/slice/counterSlice';
 
 interface CounterProps {
     className?: string;
