@@ -27,7 +27,6 @@ export const Counter = (props: CounterProps) => {
     return (
         <div className={classNames(cls.Counter, {}, [className])}>
             <h2 data-testid="counter-title">
-                {counterValue}
                 Count:
                 {counterValue}
             </h2>
