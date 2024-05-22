@@ -7,13 +7,13 @@ interface NotFoundPageProps {
 }
 
 export const NotFoundPage = (props: NotFoundPageProps) => {
-    const { className } = props;
+  const { className } = props;
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div className={classNames(cls.NotFoundPage, {}, [className])}>
-            {t('Not found')}
-        </div>
-    );
+  return (
+    <div className={classNames(cls.NotFoundPage, {}, [className])}>
+      {t('Not found')}
+    </div>
+  );
 };

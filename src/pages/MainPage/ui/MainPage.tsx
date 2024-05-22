@@ -1,22 +1,33 @@
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './MainPage.module.scss';
 import { Counter } from '@/entities/Counter';
+import { Input } from '@/shared/ui/Input/Input';
 
 interface MainPageProps {
-    className?: string;
+  className?: string;
 }
 
 const MainPage = (props: MainPageProps) => {
-    const { className } = props;
-    const { t } = useTranslation();
+  const { className } = props;
+  const { t } = useTranslation();
+  const [value, setValue] = useState('');
 
-    return (
-        <div className={classNames(cls.MainPage, {}, [className])}>
-            {t('Main page')}
-            <Counter />
-        </div>
-    );
+  const onChange = (val: string) => {
+    setValue(val);
+  };
+
+  return (
+    <div className={classNames(cls.MainPage, {}, [className])}>
+      {t('Main page')}
+      <Input
+        value={value}
+        onChange={onChange}
+        placeholder="Введите текст"
+      />
+    </div>
+  );
 };
 
 export default MainPage;

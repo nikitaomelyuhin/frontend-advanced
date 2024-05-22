@@ -7,15 +7,15 @@ interface AboutPageProps {
 }
 
 const AboutPage = (props: AboutPageProps) => {
-    const { className } = props;
+  const { className } = props;
 
-    const { t } = useTranslation('about');
+  const { t } = useTranslation('about');
 
-    return (
-        <div className={classNames(cls.AboutPage, {}, [className])}>
-            {t('About page')}
-        </div>
-    );
+  return (
+    <div className={classNames(cls.AboutPage, {}, [className])}>
+      {t('About page')}
+    </div>
+  );
 };
 
 export default AboutPage;

@@ -9,23 +9,23 @@ interface PageErrorProps {
 }
 
 export const PageError = (props: PageErrorProps) => {
-    const { className } = props;
+  const { className } = props;
 
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    const reloadPage = () => {
-        window.location.reload();
-    };
+  const reloadPage = () => {
+    window.location.reload();
+  };
 
-    return (
-        <div className={classNames(cls.PageError, {}, [className])}>
-            {t('Something went wrong')}
-            <Button
-                onClick={reloadPage}
-                theme={ButtonThemes.CLEAR}
-            >
-                {t('Reload page')}
-            </Button>
-        </div>
-    );
+  return (
+    <div className={classNames(cls.PageError, {}, [className])}>
+      {t('Something went wrong')}
+      <Button
+        onClick={reloadPage}
+        theme={ButtonThemes.CLEAR}
+      >
+        {t('Reload page')}
+      </Button>
+    </div>
+  );
 };

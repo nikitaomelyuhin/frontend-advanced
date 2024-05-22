@@ -4,5 +4,8 @@
   "lang": "Ру",
   "Not found": "Страница не найдена",
   "Something went wrong": "Что-то пошло не так",
-  "Reload page": "Перезагрузить страницу"
+  "Reload page": "Перезагрузить страницу",
+  "Enter username": "Введите username",
+  "Enter password": "Введите пароль",
+  "Sign in": "Войти"
 }

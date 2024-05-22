@@ -4,26 +4,26 @@ import cls from './Button.module.scss';
 import { ButtonProps, ButtonSize } from './Button.types';
 
 export const Button: FC<ButtonProps> = (props) => {
-    const {
-        className,
-        children,
-        theme,
-        square,
-        size = ButtonSize.M,
-        ...otherProps
-    } = props;
+  const {
+    className,
+    children,
+    theme,
+    square,
+    size = ButtonSize.M,
+    ...otherProps
+  } = props;
 
-    return (
-        <button
-            type="button"
-            className={classNames(
-                cls.Button,
-                { [cls.square]: square },
-                [className, cls[theme], cls[size]],
-            )}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
+  return (
+    <button
+      type="button"
+      className={classNames(
+        cls.Button,
+        { [cls.square]: square },
+        [className, cls[theme], cls[size]],
+      )}
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
 };

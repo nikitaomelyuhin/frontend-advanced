@@ -4,21 +4,21 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
-    .use(initReactI18next)
-    .use(Backend)
-    .use(LanguageDetector)
-    .init({
-        lng: 'en',
-        fallbackLng: 'en',
-        debug: __IS_DEV__,
+  .use(initReactI18next)
+  .use(Backend)
+  .use(LanguageDetector)
+  .init({
+    lng: 'en',
+    fallbackLng: 'en',
+    debug: __IS_DEV__,
 
-        interpolation: {
-            escapeValue: false,
-        },
+    interpolation: {
+      escapeValue: false,
+    },
 
-        backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json',
-        },
-    });
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+  });
 
 export default i18n;

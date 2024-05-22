@@ -6,11 +6,11 @@ import { Theme } from '@/shared/providers/ThemeProvider';
 import { Header } from './Header';
 
 export default {
-    title: 'widgets/Header',
-    component: Header,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'widgets/Header',
+  component: Header,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Header>;
 
 const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;

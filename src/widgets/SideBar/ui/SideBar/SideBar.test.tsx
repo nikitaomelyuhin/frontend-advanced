@@ -3,20 +3,20 @@ import { SideBar } from '@/widgets/SideBar';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 
 describe('SideBar', () => {
-    test('should render correctly', async () => {
-        componentRender(<SideBar />);
-        const sidebarElement = screen.getByTestId('SideBar');
-        expect(sidebarElement).toBeInTheDocument();
-    });
+  test('should render correctly', async () => {
+    componentRender(<SideBar />);
+    const sidebarElement = screen.getByTestId('SideBar');
+    expect(sidebarElement).toBeInTheDocument();
+  });
 
-    test('toggle test', async () => {
-        componentRender(<SideBar />);
-        const button = screen.getByTestId('side-bar-button');
+  test('toggle test', async () => {
+    componentRender(<SideBar />);
+    const button = screen.getByTestId('side-bar-button');
 
-        fireEvent.click(button);
+    fireEvent.click(button);
 
-        const sideBar = screen.getByTestId('SideBar');
+    const sideBar = screen.getByTestId('SideBar');
 
-        expect(sideBar).toHaveClass('collapsed');
-    });
+    expect(sideBar).toHaveClass('collapsed');
+  });
 });

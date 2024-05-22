@@ -1,7 +1,7 @@
 import React from 'react';
 
 function JestEmptyComponent() {
-    return (<div />);
+  return (<div />);
 }
 
 export default JestEmptyComponent;

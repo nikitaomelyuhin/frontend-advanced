@@ -4,14 +4,14 @@ import '@testing-library/jest-dom/extend-expect';
 import { ButtonThemes } from './Button.types';
 
 describe('Button', () => {
-    test('renders correctly', () => {
-        render(<Button theme={ButtonThemes.CLEAR}>Button</Button>);
-        const buttonElement = screen.getByText('Button');
-        expect(buttonElement).toBeInTheDocument();
-    });
-    test('should be clear class', () => {
-        render(<Button theme={ButtonThemes.CLEAR}>Button</Button>);
-        const buttonElement = screen.getByText('Button');
-        expect(buttonElement).toHaveClass('clear');
-    });
+  test('renders correctly', () => {
+    render(<Button theme={ButtonThemes.CLEAR}>Button</Button>);
+    const buttonElement = screen.getByText('Button');
+    expect(buttonElement).toBeInTheDocument();
+  });
+  test('should be clear class', () => {
+    render(<Button theme={ButtonThemes.CLEAR}>Button</Button>);
+    const buttonElement = screen.getByText('Button');
+    expect(buttonElement).toHaveClass('clear');
+  });
 });

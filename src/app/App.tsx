@@ -8,17 +8,17 @@ import { SideBar } from '@/widgets/SideBar';
 import '@/app/config/i18n/i18n';
 
 const App = () => (
-    <div className={classNames('app')}>
-        <Suspense fallback="">
-            <Header />
-            <div className="content">
-                <SideBar />
-                <div className="content-body">
-                    <AppRouter />
-                </div>
-            </div>
-        </Suspense>
-    </div>
+  <div className={classNames('app')}>
+    <Suspense fallback="">
+      <Header />
+      <div className="content">
+        <SideBar />
+        <div className="content-body">
+          <AppRouter />
+        </div>
+      </div>
+    </Suspense>
+  </div>
 );
 
 export default App;

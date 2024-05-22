@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SideBar.module.scss';
@@ -15,87 +15,83 @@ import SvgAbout from '@/shared/assets/icons/about.svg';
 import { Modal } from '@/shared/ui/Modal/Modal';
 
 interface SideBarProps {
-    className?: string;
+  className?: string;
 }
 
 export const SideBar = (props: SideBarProps) => {
-    const { className } = props;
+  const { className } = props;
 
-    const { t } = useTranslation(['translation', 'about']);
+  const { t } = useTranslation(['translation', 'about']);
 
-    const [collapsed, setCollapsed] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleBar = () => {
-        setCollapsed((prev) => !prev);
-    };
+  const toggleBar = () => {
+    setCollapsed((prev) => !prev);
+  };
 
-    const openModal = useCallback(() => {
-        setIsOpen(true);
-    }, []);
+  const openModal = useCallback(() => {
+    setIsOpen(true);
+  }, []);
 
-    const closeModal = useCallback(() => {
-        setIsOpen(false);
-    }, []);
+  const closeModal = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
-    return (
-        <div
-            data-testid="SideBar"
-            className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
+  return (
+    <div
+      data-testid="SideBar"
+      className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
+    >
+      <div className={cls.nav}>
+        <AppLink
+          className={cls.item}
+          to={RoutePath[AppRoutes.MAIN]}
+          theme={AppLinkThemes.PRIMARY}
         >
-            <div className={cls.nav}>
-                <button onClick={openModal}>openModal</button>
-                <Modal isOpen={isOpen} onClose={closeModal}>
-                    123
-                </Modal>
-                <AppLink
-                    className={cls.item}
-                    to={RoutePath[AppRoutes.MAIN]}
-                    theme={AppLinkThemes.PRIMARY}
-                >
-                    <SvgHome className={cls.nav_icon} />
-                    <span
-                        className={classNames(
-                            cls.nav_text,
-                            { [cls.nav_text_hidden]: collapsed },
-                        )}
-                    >
-                        {t('Main page')}
-                    </span>
-                </AppLink>
-                <AppLink
-                    className={cls.item}
-                    to={RoutePath[AppRoutes.ABOUT]}
-                    theme={AppLinkThemes.PRIMARY}
-                >
-                    <SvgAbout className={cls.nav_icon} />
-                    <span
-                        className={classNames(
-                            cls.nav_text,
-                            { [cls.nav_text_hidden]: collapsed },
-                        )}
-                    >
-                        {t('About page', { ns: 'about' })}
-                    </span>
-                </AppLink>
-            </div>
-            <Button
-                onClick={toggleBar}
-                className={cls.button}
-                theme={ButtonThemes.BACKGROUND}
-                square
-                size={ButtonSize.L}
-                data-testid="side-bar-button"
-            >
-                {collapsed
-                    ? <SvgArrowRight className={classNames(cls.icon)} />
-                    : <SvgArrowLeft className={classNames(cls.icon)} />}
-            </Button>
-            <div className={classNames(cls.footer)}>
-                <ThemeSwitcher />
-                <LangSwitcher short={collapsed} />
-            </div>
+          <SvgHome className={cls.nav_icon} />
+          <span
+            className={classNames(
+              cls.nav_text,
+              { [cls.nav_text_hidden]: collapsed },
+            )}
+          >
+            {t('Main page')}
+          </span>
+        </AppLink>
+        <AppLink
+          className={cls.item}
+          to={RoutePath[AppRoutes.ABOUT]}
+          theme={AppLinkThemes.PRIMARY}
+        >
+          <SvgAbout className={cls.nav_icon} />
+          <span
+            className={classNames(
+              cls.nav_text,
+              { [cls.nav_text_hidden]: collapsed },
+            )}
+          >
+            {t('About page', { ns: 'about' })}
+          </span>
+        </AppLink>
+      </div>
+      <Button
+        onClick={toggleBar}
+        className={cls.button}
+        theme={ButtonThemes.BACKGROUND}
+        square
+        size={ButtonSize.L}
+        data-testid="side-bar-button"
+      >
+        {collapsed
+          ? <SvgArrowRight className={classNames(cls.icon)} />
+          : <SvgArrowLeft className={classNames(cls.icon)} />}
+      </Button>
+      <div className={classNames(cls.footer)}>
+        <ThemeSwitcher />
+        <LangSwitcher short={collapsed} />
+      </div>
 
-        </div>
-    );
+    </div>
+  );
 };

@@ -11,28 +11,28 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
-    const { className } = props;
+  const { className } = props;
 
-    const { toggleTheme, theme } = useTheme();
+  const { toggleTheme, theme } = useTheme();
 
-    return (
-        <div className={classNames(cls.ThemeSwitcher, {}, [className])}>
-            <Button
-                theme={ButtonThemes.CLEAR}
-                onClick={toggleTheme}
-            >
-                {theme === 'dark'
-                    ? (
-                        <SvgMoon
-                            className={classNames(cls.icon, {}, [cls.iconMoon])}
-                        />
-                    )
-                    : (
-                        <SvgSun
-                            className={classNames(cls.icon, {}, [cls.iconSun])}
-                        />
-                    )}
-            </Button>
-        </div>
-    );
+  return (
+    <div className={classNames(cls.ThemeSwitcher, {}, [className])}>
+      <Button
+        theme={ButtonThemes.CLEAR}
+        onClick={toggleTheme}
+      >
+        {theme === 'dark'
+          ? (
+            <SvgMoon
+              className={classNames(cls.icon, {}, [cls.iconMoon])}
+            />
+          )
+          : (
+            <SvgSun
+              className={classNames(cls.icon, {}, [cls.iconSun])}
+            />
+          )}
+      </Button>
+    </div>
+  );
 };

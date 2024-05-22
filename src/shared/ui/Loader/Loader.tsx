@@ -6,11 +6,11 @@ interface LoaderProps {
 }
 
 export const Loader = (props: LoaderProps) => {
-    const { className } = props;
+  const { className } = props;
 
-    return (
-        <div className={classNames(cls.Loader, {}, [className])}>
-            <div className={cls.loader} />
-        </div>
-    );
+  return (
+    <div className={classNames(cls.Loader, {}, [className])}>
+      <div className={cls.loader} />
+    </div>
+  );
 };
