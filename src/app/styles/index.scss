@@ -4,20 +4,20 @@
 @import "themes/normal";
 
 body {
-    font: var(--font-m);
-    color: var(--primary-color);
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .app {
-    background: var(--bg-color);
-    min-height: 100vh;
+  background: var(--bg-color);
+  min-height: 100vh;
 }
 
 .content {
-    display: flex;
+  display: flex;
 }
 
 .content-body {
-    flex: 1;
-    height: calc(100vh - var(--navbar-height));
+  flex: 1;
+  height: calc(100vh - var(--navbar-height));
 }
