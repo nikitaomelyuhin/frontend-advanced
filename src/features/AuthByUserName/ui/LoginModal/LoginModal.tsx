@@ -18,7 +18,7 @@ export const LoginModal = (props: LoginModalProps) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <LoginForm />
+      <LoginForm onCloseModal={onClose} />
     </Modal>
   );
 };

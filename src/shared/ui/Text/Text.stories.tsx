@@ -47,3 +47,18 @@ onlyTextDark.args = {
   text: 'text',
 };
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Error = Template.bind({});
+Error.args = {
+  title: 'Some title',
+  text: 'Description Description',
+  theme: 'error',
+};
+
+export const ErrorDark = Template.bind({});
+ErrorDark.args = {
+  title: 'Some title',
+  text: 'Description Description',
+  theme: 'error',
+};
+ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];

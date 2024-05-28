@@ -12,13 +12,15 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { Text } from '@/shared/ui/Text/Text';
 
 interface LoginFormProps {
   className?: string;
+  onCloseModal?: () => void;
 }
 
 export const LoginForm = memo((props: LoginFormProps) => {
-  const { className } = props;
+  const { className, onCloseModal } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const username = useSelector(getLoginUsername);
@@ -36,11 +38,13 @@ export const LoginForm = memo((props: LoginFormProps) => {
 
   const onLoginClick = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
-  }, [dispatch, username, password]);
+    onCloseModal();
+  }, [dispatch, username, password, onCloseModal]);
 
   return (
     <div className={classNames(cls.loginForm, {}, [className])}>
-      {error && <div>{error}</div>}
+      <Text title={t('Authorization form')} />
+      {error && <Text text={error} theme="error" />}
       <Input
         type="text"
         className={cls.input}
