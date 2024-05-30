@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './MainPage.module.scss';
-import { Counter } from '@/entities/Counter';
 import { Input } from '@/shared/ui/Input/Input';
 
 interface MainPageProps {
