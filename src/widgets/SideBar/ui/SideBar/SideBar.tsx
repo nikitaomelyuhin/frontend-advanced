@@ -13,6 +13,8 @@ import { AppRoutes, RoutePath } from '@/shared/constants/router';
 import SvgHome from '@/shared/assets/icons/home.svg';
 import SvgAbout from '@/shared/assets/icons/about.svg';
 import { Modal } from '@/shared/ui/Modal/Modal';
+import { sideBarItems } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SideBarProps {
   className?: string;
@@ -44,36 +46,13 @@ export const SideBar = (props: SideBarProps) => {
       className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}
     >
       <div className={cls.nav}>
-        <AppLink
-          className={cls.item}
-          to={RoutePath[AppRoutes.MAIN]}
-          theme={AppLinkThemes.PRIMARY}
-        >
-          <SvgHome className={cls.nav_icon} />
-          <span
-            className={classNames(
-              cls.nav_text,
-              { [cls.nav_text_hidden]: collapsed },
-            )}
-          >
-            {t('Main page')}
-          </span>
-        </AppLink>
-        <AppLink
-          className={cls.item}
-          to={RoutePath[AppRoutes.ABOUT]}
-          theme={AppLinkThemes.PRIMARY}
-        >
-          <SvgAbout className={cls.nav_icon} />
-          <span
-            className={classNames(
-              cls.nav_text,
-              { [cls.nav_text_hidden]: collapsed },
-            )}
-          >
-            {t('About page', { ns: 'about' })}
-          </span>
-        </AppLink>
+        {sideBarItems.map((item) => (
+          <SidebarItem
+            key={item.to}
+            item={item}
+            collapsed={collapsed}
+          />
+        ))}
       </div>
       <Button
         onClick={toggleBar}

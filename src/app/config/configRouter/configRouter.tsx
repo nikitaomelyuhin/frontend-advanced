@@ -3,6 +3,7 @@ import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { AppRoutes, RoutePath } from '@/shared/constants/router';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
 
 export const RouteConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
@@ -13,6 +14,11 @@ export const RouteConfig: Record<AppRoutes, RouteProps> = {
     path: RoutePath[AppRoutes.ABOUT],
     element: <AboutPage />,
   },
+  [AppRoutes.PROFILE]: {
+    path: RoutePath[AppRoutes.PROFILE],
+    element: <ProfilePage />,
+  },
+  // last
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath[AppRoutes.NOT_FOUND],
     element: <NotFoundPage />,

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { Button } from '@/shared/ui/Button/Button';
@@ -18,7 +19,7 @@ import { useDynamicModuleLoader } from '@/shared/hooks/useDynamicModuleLoader/us
 
 export interface LoginFormProps {
   className?: string;
-  onCloseModal?: () => void;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -26,16 +27,15 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm = memo((props: LoginFormProps) => {
-  const { className, onCloseModal } = props;
+  const { className, onSuccess } = props;
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginLoading);
   const error = useSelector(getLoginError);
 
   useDynamicModuleLoader({ reducers: initialReducers, removeAfterUnmount: true });
-
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
   }, [dispatch]);
@@ -44,10 +44,12 @@ const LoginForm = memo((props: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-    onCloseModal();
-  }, [dispatch, username, password, onCloseModal]);
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, username, password, onSuccess]);
 
   return (
     <div className={classNames(cls.loginForm, {}, [className])}>

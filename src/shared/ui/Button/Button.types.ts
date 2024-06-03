@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 export enum ButtonThemes {
   CLEAR = 'clear',
@@ -19,4 +19,5 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   disabled?: boolean;
   size?: ButtonSize;
+  children: ReactNode;
 }

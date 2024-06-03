@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  fill: var(--primary-color);
+  width: var(--font-size-l);
+  height: var(--font-size-l);
+  flex-shrink: 0;
+}
+
+.nav-text {
+  margin-left: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-text-hidden {
+  opacity: 0;
+}

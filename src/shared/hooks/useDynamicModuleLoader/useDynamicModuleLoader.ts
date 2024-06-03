@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { ReduxStoreWithManager } from '@/shared/providers/StoreProvider/config/StateSchema';
 import { DynamicModuleLoaderParams, ReducersListEntry } from '../useDynamicModuleLoader.types';
+import { useAppDispatch } from '../useAppDispatch/useAppDispatch';
 
 export const useDynamicModuleLoader = (params: DynamicModuleLoaderParams) => {
   const {
