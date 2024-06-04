@@ -1,0 +1,17 @@
+.profile-card {
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--bg-color-inverted);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
