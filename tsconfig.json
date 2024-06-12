@@ -7,17 +7,25 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ]
+    },
   },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
-//      "include": ["./src/app/types/global.d.ts"]
+      //      "include": ["./src/app/types/global.d.ts"]
     }
   }
 }

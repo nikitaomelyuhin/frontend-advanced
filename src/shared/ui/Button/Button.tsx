@@ -8,8 +8,8 @@ export const Button = memo((props: ButtonProps) => {
     className,
     children,
     theme,
-    square,
-    disabled,
+    square = false,
+    disabled = false,
     size = ButtonSize.M,
     ...otherProps
   } = props;

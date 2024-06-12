@@ -3,8 +3,8 @@ import { ThemeContext } from './ThemeContext';
 import { LOCAL_STORAGE_THEME_KEY, Theme } from '../types/themeContext';
 
 interface UseThemeResult {
-    toggleTheme: () => void;
-    theme: Theme
+  toggleTheme: () => void;
+  theme: Theme
 }
 
 export function useTheme(): UseThemeResult {
@@ -12,11 +12,13 @@ export function useTheme(): UseThemeResult {
 
   const toggleTheme = () => {
     const newTheme = theme === Theme.DARK ? Theme.NORMAL : Theme.DARK;
-    setTheme(newTheme);
-    document.body.classList.remove(theme);
+    setTheme?.(newTheme);
+    if (theme) {
+      document.body.classList.remove(theme);
+    }
     document.body.classList.add(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
-  return { toggleTheme, theme };
+  return { toggleTheme, theme: theme || Theme.NORMAL };
 }

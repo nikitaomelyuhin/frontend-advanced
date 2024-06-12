@@ -1,0 +1,26 @@
+"use strict";
+(self.webpackChunkfrontend_advanced = self.webpackChunkfrontend_advanced || []).push([[686], { 4686: function (e, n, t) { t.r(n), t.d(n, { default: function () { return N; } }); var r = t(5893), a = t(2327), o = t(7294), l = t(9704), c = t(4611); var s = "WvK8oNvc"; var u = t(9161), i = t(6540), d = t(6925), v = t(4860), f = function (e) { var n, t; return null !== (t = null === (n = null == e ? void 0 : e.login) || void 0 === n ? void 0 : n.username) && void 0 !== t ? t : ""; }, m = function (e) { var n, t; return null !== (t = null === (n = null == e ? void 0 : e.login) || void 0 === n ? void 0 : n.password) && void 0 !== t ? t : ""; }, p = t(5894), h = function (e) { var n, t; return null !== (t = null === (n = null == e ? void 0 : e.login) || void 0 === n ? void 0 : n.isLoading) && void 0 !== t && t; }, x = function (e) { var n, t; return null !== (t = null === (n = null == e ? void 0 : e.login) || void 0 === n ? void 0 : n.error) && void 0 !== t ? t : ""; }; var y = { primary: "cy4tUHv6", title: "ikI7VPeL", text: "uNJeeCm1", error: "F9oLXAK4" }; var j = function (e) { var n = e.className, t = e.title, a = e.text, o = e.theme, l = void 0 === o ? "primary" : o; return (0, r.jsxs)("div", { className: (0, c.A)("", {}, [n, y[l]]), children: [t && (0, r.jsx)("p", { className: y.title, children: t }), a && (0, r.jsx)("p", { className: y.text, children: a })] }); }, g = { login: v.t }; var N = (0, o.memo)((function (e) { var n = e.className, t = e.onCloseModal, y = (0, a.$)().t, N = (0, l.I0)(), b = (0, l.v9)(f), O = (0, l.v9)(m), C = (0, l.v9)(h), w = (0, l.v9)(x); !function (e) { var n = e.reducers, t = e.removeAfterUnmount, r = (0, l.oR)(), a = (0, l.I0)(); (0, o.useEffect)((function () { return Object.entries(n).forEach((function (e) { var n = e[0], t = e[1]; r.reducerManager.add(n, t), a({ type: "@INIT ".concat(n, " reducer") }); })), function () { t && Object.entries(n).forEach((function (e) { var n = e[0]; e[1], r.reducerManager.remove(n), a({ type: "@DESTROY ".concat(n, " reducer") }); })); }; }), []); }({ reducers: g, removeAfterUnmount: !0 }); var I = (0, o.useCallback)((function (e) { N(v.BK.setUsername(e)); }), [N]), k = (0, o.useCallback)((function (e) { N(v.BK.setPassword(e)); }), [N]), S = (0, o.useCallback)((function () { N((0, p.j)({ username: b, password: O })), t(); }), [N, b, O, t]); return (0, r.jsxs)("div", { className: (0, c.A)("bDloSiR9", {}, [n]), children: [(0, r.jsx)(j, { title: y("Authorization form") }), w && (0, r.jsx)(j, { text: w, theme: "error" }), (0, r.jsx)(d.I, { type: "text", className: s, placeholder: y("Enter username"), autofocus: !0, onChange: I, value: b }), (0, r.jsx)(d.I, { type: "text", className: s, placeholder: y("Enter password"), onChange: k, value: O }), (0, r.jsx)(u.z, { className: "XaFwyHbd", onClick: S, theme: i.l.OUTLINE, disabled: C, children: y("Sign in") })] }); })); }, 6925: function (e, n, t) {
+            t.d(n, { I: function () { return c; } });
+            var r = t(5893), a = t(7294), o = t(4611);
+            var l = function () {
+                return l = Object.assign || function (e) {
+                    for (var n, t = 1, r = arguments.length; t < r; t++)
+                        for (var a in n = arguments[t])
+                            Object.prototype.hasOwnProperty.call(n, a) && (e[a] = n[a]);
+                    return e;
+                }, l.apply(this, arguments);
+            }, c = (0, a.memo)((function (e) {
+                var n = e.className, t = e.value, c = e.autofocus, s = e.type, u = void 0 === s ? "text" : s, i = e.placeholder, d = e.onChange, v = function (e, n) {
+                    var t = {};
+                    for (var r in e)
+                        Object.prototype.hasOwnProperty.call(e, r) && n.indexOf(r) < 0 && (t[r] = e[r]);
+                    if (null != e && "function" == typeof Object.getOwnPropertySymbols) {
+                        var a = 0;
+                        for (r = Object.getOwnPropertySymbols(e); a < r.length; a++)
+                            n.indexOf(r[a]) < 0 && Object.prototype.propertyIsEnumerable.call(e, r[a]) && (t[r[a]] = e[r[a]]);
+                    }
+                    return t;
+                }(e, ["className", "value", "autofocus", "type", "placeholder", "onChange"]), f = (0, a.useRef)(null), m = (0, a.useState)(!1), p = m[0], h = m[1], x = (0, a.useState)(0), y = x[0], j = x[1];
+                return (0, a.useEffect)((function () { var e; c && (h(!0), null === (e = f.current) || void 0 === e || e.focus()); }), [c]), (0, r.jsxs)("div", { className: (0, o.A)("LVdIPwcx", {}, [n]), children: [i && (0, r.jsx)("div", { className: "emAQQ85i", children: "".concat(i, ">") }), (0, r.jsxs)("div", { className: "MRdDkCxl", children: [(0, r.jsx)("input", l({ ref: f, className: "tjhlYVyS", type: u, value: t, onChange: function (e) { null == d || d(e.target.value), j(e.target.value.length); }, onSelect: function (e) { var n; j((null === (n = null == e ? void 0 : e.target) || void 0 === n ? void 0 : n.selectionStart) || 0); }, onFocus: function () { h(!0); }, onBlur: function () { h(!1); } }, v)), p && (0, r.jsx)("span", { style: { left: "".concat(9 * y, "px") }, className: "lqMFGBuL" })] })] });
+            }));
+        } }]);

@@ -24,7 +24,7 @@ export const Modal = (props: ModalProps) => {
     onClose,
   } = props;
 
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -53,7 +53,9 @@ export const Modal = (props: ModalProps) => {
 
     return () => {
       window.removeEventListener('keydown', onKeyDown);
-      clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [isOpen, onKeyDown]);
 

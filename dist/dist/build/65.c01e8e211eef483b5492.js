@@ -1,0 +1,2 @@
+"use strict";
+(self.webpackChunkfrontend_advanced = self.webpackChunkfrontend_advanced || []).push([[65], { 65: function (a, e, n) { n.r(e), n.d(e, { default: function () { return d; } }); var s = n(5893), t = n(2327), c = n(4611); var d = function (a) { var e = a.className, n = (0, t.$)("about").t; return (0, s.jsx)("div", { className: (0, c.A)("KYUVIJJF", {}, [e]), children: n("About page") }); }; } }]);
