@@ -6,7 +6,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUserName';
-import { ProfileSchema } from '@/entities/Profile';
+import { EditableProfileSchema } from '@/features/EditableProfileCard';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -14,7 +14,7 @@ export interface StateSchema {
 
   // async reducers
   login?: LoginSchema;
-  profile?: ProfileSchema;
+  editableProfile?: EditableProfileSchema;
 }
 
 export type StateSchemaKeys = keyof StateSchema;

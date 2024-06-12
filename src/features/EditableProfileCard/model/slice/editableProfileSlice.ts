@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Profile, ProfileSchema } from '../types/profile';
-import { fetchProfile } from '../services/fetchProfile/fetchProfile';
+import { EditableProfileSchema } from '../types/editableProfile';
+import { fetchProfile, Profile } from '@/entities/Profile';
 
-const initialState: ProfileSchema = {
+const initialState: EditableProfileSchema = {
   readonly: true,
   isLoading: false,
   error: undefined,
   data: undefined,
 };
 
-export const profileSlice = createSlice({
+export const editableProfileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {},
@@ -29,6 +29,5 @@ export const profileSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const { actions: profileActions } = editableProfileSlice;
+export const { reducer: profileReducer } = editableProfileSlice;
