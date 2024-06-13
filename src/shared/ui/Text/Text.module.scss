@@ -12,10 +12,24 @@
 
 .error {
   .title {
+    font: var(--font-l);
     color: var(--red-light);
   }
 
   .text {
+    font: var(--font-m);
     color: var(--red-dark);
   }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }

@@ -7,12 +7,20 @@ const initialState: EditableProfileSchema = {
   isLoading: false,
   error: undefined,
   data: undefined,
+  form: undefined,
 };
 
 export const editableProfileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    updateForm(state, action: PayloadAction<Profile>) {
+      state.form = {
+        ...state.form,
+        ...action.payload,
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProfile.pending, (state, action) => {
       state.error = undefined;
@@ -20,6 +28,7 @@ export const editableProfileSlice = createSlice({
     });
     builder.addCase(fetchProfile.fulfilled, (state, action: PayloadAction<Profile>) => {
       state.data = action.payload;
+      state.form = action.payload;
       state.isLoading = false;
     });
     builder.addCase(fetchProfile.rejected, (state, action) => {

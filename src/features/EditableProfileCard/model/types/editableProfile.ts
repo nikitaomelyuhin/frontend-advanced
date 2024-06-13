@@ -5,4 +5,5 @@ export interface EditableProfileSchema {
   isLoading: boolean;
   error?: string;
   readonly: boolean;
+  form?: Profile;
 }

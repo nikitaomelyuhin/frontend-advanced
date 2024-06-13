@@ -9,3 +9,10 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.loading, .error {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

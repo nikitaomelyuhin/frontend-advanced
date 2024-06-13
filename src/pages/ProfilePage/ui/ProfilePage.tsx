@@ -6,14 +6,14 @@ import { fetchProfile, profileReducer } from '@/entities/Profile';
 import { useDynamicModuleLoader } from '@/shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
-import { EditableProfileCard } from '@/features/EditableProfileCard';
+import { EditableProfileCard, editableProfileReducer } from '@/features/EditableProfileCard';
 
 interface ProfilePageProps {
   className?: string;
 }
 
 const reducers: ReducersList = {
-  profile: profileReducer,
+  editableProfile: editableProfileReducer,
 };
 
 const ProfilePage = (props: ProfilePageProps) => {

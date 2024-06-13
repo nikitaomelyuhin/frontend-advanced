@@ -1,7 +1,10 @@
 {
   "About page": "About page",
   "Authorization form": "Authorization form",
+  "Cannot get profile data": "Cannot get profile data",
   "Edit": "Edit",
+  "Enter age": "Enter age",
+  "Enter city": "Enter city",
   "Enter firstname": "Enter firstname",
   "Enter lastname": "Enter lastname",
   "Enter password": "Enter password",
@@ -13,6 +16,7 @@
   "Reload page": "Reload page",
   "Sign in": "Sign in",
   "Something went wrong": "Something went wrong",
+  "Try to reload page": "Try to reload page",
   "lang": "lang",
   "language": "language"
 }

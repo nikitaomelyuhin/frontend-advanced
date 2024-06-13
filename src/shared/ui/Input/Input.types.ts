@@ -4,7 +4,7 @@ export type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value'
 
 export interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   autofocus?: boolean;
   onChange?: (value: string) => void;
 }
