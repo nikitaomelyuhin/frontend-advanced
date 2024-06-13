@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import i18n from '@/app/config/i18n/i18n';
 import { ThunkConfig } from '@/shared/providers/StoreProvider';
-import { Profile } from '../../../../../entities/Profile/model/types/profile';
+import { Profile } from '../../types/profile';
 
 export const fetchProfile = createAsyncThunk<Profile, void, ThunkConfig<string>>(
   'profile/fetchProfile',

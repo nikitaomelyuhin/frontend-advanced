@@ -1,5 +1,5 @@
 import React, {
-  memo, useEffect, useRef, useState,
+  memo, useEffect, useMemo, useRef, useState,
 } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
@@ -12,6 +12,7 @@ export const Input = memo((props: InputProps) => {
     autofocus,
     type = 'text',
     placeholder,
+    readonly = false,
     onChange,
     ...otherProps
   } = props;
@@ -20,6 +21,10 @@ export const Input = memo((props: InputProps) => {
 
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
+
+  const isVisibleCaret = useMemo(() => {
+    return isFocused && !readonly;
+  }, [isFocused, readonly]);
 
   useEffect(() => {
     if (autofocus) {
@@ -57,6 +62,7 @@ export const Input = memo((props: InputProps) => {
           ref={ref}
           className={cls.field}
           type={type}
+          readOnly={readonly}
           value={value}
           onChange={onChangeHandler}
           onSelect={onSelect}
@@ -64,7 +70,7 @@ export const Input = memo((props: InputProps) => {
           onBlur={onBlur}
           {...otherProps}
         />
-        {isFocused && (
+        {isVisibleCaret && (
           <span
             style={{ left: `${caretPosition * 9}px` }}
             className={cls.caret}

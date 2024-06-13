@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 
@@ -6,28 +7,33 @@ import { Input } from '@/shared/ui/Input/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { Text } from '@/shared/ui/Text/Text';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
 
 interface ProfileCardProps {
   className?: string;
   profileData?: Profile;
   isLoading: boolean;
   error: string | null;
+  readonly: boolean;
   onChangeFirstName: (value: string) => void;
   onChangeLastName: (value: string) => void;
   onChangeAge: (value: string) => void;
   onChangeCity: (value: string) => void;
+  onChangeAvatar: (value: string) => void;
 }
 
-export const ProfileCard = (props: ProfileCardProps) => {
+export const ProfileCard = memo((props: ProfileCardProps) => {
   const {
     className,
     profileData,
     isLoading,
     error,
+    readonly,
     onChangeFirstName,
     onChangeLastName,
     onChangeAge,
     onChangeCity,
+    onChangeAvatar,
   } = props;
   const { t } = useTranslation();
 
@@ -53,20 +59,32 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.profileCard, {}, [className])}>
+    <div className={classNames(cls.profileCard, { [cls.profileCardEdit]: !readonly }, [className])}>
+      <div className={cls.header}>
+        {profileData?.avatar && (
+          <Avatar
+            src={profileData.avatar}
+            alt="user avatar"
+            size="lg"
+          />
+        )}
+      </div>
       <div className={cls.data}>
         <Input
           placeholder={t('Enter firstname')}
+          readonly={readonly}
           value={profileData?.first ?? ''}
           onChange={onChangeFirstName}
         />
         <Input
           placeholder={t('Enter lastname')}
+          readonly={readonly}
           value={profileData?.lastname ?? ''}
           onChange={onChangeLastName}
         />
         <Input
           placeholder={t('Enter age')}
+          readonly={readonly}
           value={profileData?.age ?? ''}
           onChange={onChangeAge}
           onKeyPress={(e) => {
@@ -77,10 +95,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
         />
         <Input
           placeholder={t('Enter city')}
+          readonly={readonly}
           value={profileData?.city ?? ''}
           onChange={onChangeCity}
+        />
+        <Input
+          placeholder={t('Enter avatar src')}
+          readonly={readonly}
+          value={profileData?.avatar ?? ''}
+          onChange={onChangeAvatar}
         />
       </div>
     </div>
   );
-};
+});

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ProfilePage.module.scss';
 import { ReducersList } from '@/shared/hooks/useDynamicModuleLoader.types';

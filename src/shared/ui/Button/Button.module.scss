@@ -20,6 +20,13 @@
   border-radius: 5px;
 }
 
+.outline-danger {
+  border: 1px solid var(--red-dark);
+  background: none;
+  color: var(--red-dark);
+  border-radius: 5px;
+}
+
 .background {
   background-color: var(--nav-bar-bg-color);
   color: var(--primary-color);

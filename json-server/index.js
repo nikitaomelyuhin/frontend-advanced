@@ -55,3 +55,5 @@ server.use(router);
 server.listen(8000, () => {
   console.log('server is running on 8000 port');
 });
+
+// Avatar image https://www.worldatlas.com/r/w1200-q80/upload/c7/91/96/shutterstock-109340948.jpg

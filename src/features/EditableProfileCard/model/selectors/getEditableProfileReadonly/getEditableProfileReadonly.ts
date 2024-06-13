@@ -1,3 +1,3 @@
 import { StateSchema } from '@/shared/providers/StoreProvider';
 
-export const getEditableProfileReadonly = (state: StateSchema) => state?.editableProfile?.readonly;
+export const getEditableProfileReadonly = (state: StateSchema) => state?.editableProfile?.readonly ?? true;

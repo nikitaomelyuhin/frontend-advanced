@@ -3,6 +3,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 export enum ButtonThemes {
   CLEAR = 'clear',
   OUTLINE = 'outline',
+  OUTLINE_DANGER = 'outline-danger',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
 }
