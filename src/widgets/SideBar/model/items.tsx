@@ -8,6 +8,7 @@ export interface SidebarItemType {
   to: string;
   text: string;
   translationNs?: string;
+  authOnly?: boolean;
   Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 }
 
@@ -27,6 +28,7 @@ export const sideBarItems: SidebarItemType[] = [
     to: RoutePath[AppRoutes.PROFILE],
     text: 'Profile',
     translationNs: 'profile',
+    authOnly: true,
     Icon: SvgProfile,
   },
 ];

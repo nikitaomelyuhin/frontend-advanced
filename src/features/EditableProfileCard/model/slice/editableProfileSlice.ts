@@ -59,5 +59,5 @@ export const editableProfileSlice = createSlice({
   },
 });
 
-export const { actions: profileActions } = editableProfileSlice;
-export const { reducer: profileReducer } = editableProfileSlice;
+export const { actions: editableProfileActions } = editableProfileSlice;
+export const { reducer: editableProfileReducer } = editableProfileSlice;

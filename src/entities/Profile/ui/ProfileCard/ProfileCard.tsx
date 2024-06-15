@@ -8,6 +8,8 @@ import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { Text } from '@/shared/ui/Text/Text';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
 
 interface ProfileCardProps {
   className?: string;
@@ -20,6 +22,8 @@ interface ProfileCardProps {
   onChangeAge: (value: string) => void;
   onChangeCity: (value: string) => void;
   onChangeAvatar: (value: string) => void;
+  onChangeCountry: (value: Country) => void;
+  onChangeCurrency: (value: Currency) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -34,7 +38,10 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     onChangeAge,
     onChangeCity,
     onChangeAvatar,
+    onChangeCountry,
+    onChangeCurrency,
   } = props;
+
   const { t } = useTranslation();
 
   if (isLoading) {
@@ -104,6 +111,16 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           readonly={readonly}
           value={profileData?.avatar ?? ''}
           onChange={onChangeAvatar}
+        />
+        <CurrencySelect
+          readonly={readonly}
+          value={profileData?.currency}
+          onChange={onChangeCurrency}
+        />
+        <CountrySelect
+          readonly={readonly}
+          value={profileData?.country}
+          onChange={onChangeCountry}
         />
       </div>
     </div>

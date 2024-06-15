@@ -7,7 +7,10 @@ import { getEditableProfileLoading } from '../../model/selectors/getEditableProf
 import { getEditableProfileError } from '../../model/selectors/getEditableProfileError/getEditableProfileError';
 import { getEditableProfileForm } from '../../model/selectors/getEditableProfileForm/getEditableProfileForm';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
-import { editableProfileActions, getEditableProfileReadonly } from '../..';
+import { getEditableProfileReadonly } from '../../model/selectors/getEditableProfileReadonly/getEditableProfileReadonly';
+import { editableProfileActions } from '../../model/slice/editableProfileSlice';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -41,6 +44,14 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     dispatch(editableProfileActions.updateForm({ avatar: value }));
   }, [dispatch]);
 
+  const onChangeCountry = useCallback((value: Country) => {
+    dispatch(editableProfileActions.updateForm({ country: value }));
+  }, [dispatch]);
+
+  const onChangeCurrency = useCallback((value: Currency) => {
+    dispatch(editableProfileActions.updateForm({ currency: value }));
+  }, [dispatch]);
+
   return (
     <div className={classNames(cls.editableProfileCard, {}, [className])}>
       <ProfileCard
@@ -53,6 +64,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         onChangeAge={onChangeAge}
         onChangeCity={onChangeCity}
         onChangeAvatar={onChangeAvatar}
+        onChangeCountry={onChangeCountry}
+        onChangeCurrency={onChangeCurrency}
       />
     </div>
   );
