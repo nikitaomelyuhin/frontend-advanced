@@ -23,7 +23,9 @@ const ProfilePage = (props: ProfilePageProps) => {
   useDynamicModuleLoader({ reducers, removeAfterUnmount: true });
 
   useEffect(() => {
-    dispatch(fetchProfile());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfile());
+    }
   }, [dispatch]);
 
   return (

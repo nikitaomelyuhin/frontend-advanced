@@ -26,6 +26,7 @@ export const editableProfileSlice = createSlice({
     cancelEdit(state) {
       state.readonly = true;
       state.form = state.data;
+      state.validateErrors = undefined;
     },
   },
   extraReducers: (builder) => {
@@ -43,7 +44,7 @@ export const editableProfileSlice = createSlice({
       state.error = action.payload;
     });
     builder.addCase(updateProfile.pending, (state, action) => {
-      state.error = undefined;
+      state.validateErrors = undefined;
       state.isLoading = true;
     });
     builder.addCase(updateProfile.fulfilled, (state, action: PayloadAction<Profile>) => {
@@ -51,10 +52,11 @@ export const editableProfileSlice = createSlice({
       state.form = action.payload;
       state.isLoading = false;
       state.readonly = true;
+      state.validateErrors = undefined;
     });
     builder.addCase(updateProfile.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.validateErrors = action.payload;
     });
   },
 });

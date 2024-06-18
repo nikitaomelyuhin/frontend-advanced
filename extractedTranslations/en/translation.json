@@ -12,6 +12,9 @@
   "Enter lastname": "",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
+  "First name and last name are required": "First name and last name are required",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country",
   "Incorrect login or password": "",
   "Logout": "Logout",
   "Main page": "Main page",
@@ -19,11 +22,13 @@
   "Profile": "",
   "Reload page": "Reload page",
   "Save": "",
+  "Server error on saving": "Server error on saving",
   "Sign in": "Sign in",
   "Something went wrong": "Something went wrong",
   "Specify country": "Specify country",
   "Specify currency": "Specify currency",
   "Try to reload page": "Try to reload page",
+  "Unspecified data": "Unspecified data",
   "lang": "",
   "language": "language"
 }

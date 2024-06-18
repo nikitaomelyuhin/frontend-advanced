@@ -1,5 +1,6 @@
 export {
   Profile,
+  ValidateProfileError,
 } from './model/types/profile';
 
 export { fetchProfile } from './model/services/fetchProfile/fetchProfile';

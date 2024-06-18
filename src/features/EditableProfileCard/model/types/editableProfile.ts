@@ -1,4 +1,5 @@
 import { Profile } from '@/entities/Profile';
+import { ValidateProfileError } from '@/entities/Profile/model/types/profile';
 
 export interface EditableProfileSchema {
   data?: Profile;
@@ -6,4 +7,5 @@ export interface EditableProfileSchema {
   error?: string;
   readonly: boolean;
   form?: Profile;
+  validateErrors?: ValidateProfileError[];
 }
