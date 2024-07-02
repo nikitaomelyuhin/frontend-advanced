@@ -11,7 +11,19 @@ export function useTheme(): UseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    const newTheme = theme === Theme.DARK ? Theme.NORMAL : Theme.DARK;
+    let newTheme: null | Theme = null;
+
+    switch (theme) {
+    case Theme.NORMAL:
+      newTheme = Theme.DARK;
+      break;
+    case Theme.DARK:
+      newTheme = Theme.ORANGE;
+      break;
+    default:
+      newTheme = Theme.NORMAL;
+      break;
+    }
     setTheme?.(newTheme);
     if (theme) {
       document.body.classList.remove(theme);
