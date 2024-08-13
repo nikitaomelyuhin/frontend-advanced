@@ -8,11 +8,6 @@ import SvgArrowRight from '@/shared/assets/icons/arrow-right.svg';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { ButtonSize, ButtonThemes } from '@/shared/ui/Button/Button.types';
-import { AppLink, AppLinkThemes } from '@/shared/ui/AppLink/AppLink';
-import { AppRoutes, RoutePath } from '@/shared/constants/router';
-import SvgHome from '@/shared/assets/icons/home.svg';
-import SvgAbout from '@/shared/assets/icons/about.svg';
-import { Modal } from '@/shared/ui/Modal/Modal';
 import { sideBarItems } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -23,22 +18,11 @@ interface SideBarProps {
 export const SideBar = (props: SideBarProps) => {
   const { className } = props;
 
-  const { t } = useTranslation(['translation', 'about']);
-
   const [collapsed, setCollapsed] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   const toggleBar = () => {
     setCollapsed((prev) => !prev);
   };
-
-  const openModal = useCallback(() => {
-    setIsOpen(true);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setIsOpen(false);
-  }, []);
 
   return (
     <div

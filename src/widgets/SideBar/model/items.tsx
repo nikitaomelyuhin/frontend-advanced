@@ -3,6 +3,7 @@ import { AppRoutes, RoutePath } from '@/shared/constants/router';
 import SvgHome from '@/shared/assets/icons/home.svg';
 import SvgAbout from '@/shared/assets/icons/about.svg';
 import SvgProfile from '@/shared/assets/icons/profile.svg';
+import SvgArticles from '@/shared/assets/icons/articles.svg';
 
 export interface SidebarItemType {
   to: string;
@@ -30,5 +31,12 @@ export const sideBarItems: SidebarItemType[] = [
     translationNs: 'profile',
     authOnly: true,
     Icon: SvgProfile,
+  },
+  {
+    to: RoutePath[AppRoutes.ARTICLES],
+    text: 'Articles',
+    translationNs: 'articles',
+    authOnly: true,
+    Icon: SvgArticles,
   },
 ];
