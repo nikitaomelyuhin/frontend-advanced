@@ -7,11 +7,12 @@ import { SideBar } from '@/widgets/SideBar';
 
 import '@/app/config/i18n/i18n';
 // eslint-disable-next-line import/order
-import { useDispatch } from 'react-redux';
-import { userActions } from '@/entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from '@/entities/User';
 
 const App = () => {
   const dispatch = useDispatch();
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -24,7 +25,7 @@ const App = () => {
         <div className="content">
           <SideBar />
           <div className="content-body">
-            <AppRouter />
+            {inited && <AppRouter />}
           </div>
         </div>
       </Suspense>
