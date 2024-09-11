@@ -8,6 +8,7 @@ import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUserName';
 import { EditableProfileSchema } from '@/features/EditableProfileCard';
 import { ArticleDetailsSchema } from '@/entities/Article';
+import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -16,6 +17,7 @@ export interface StateSchema {
   // async reducers
   login?: LoginSchema;
   articleDetails?: ArticleDetailsSchema;
+  articleDetailsComments?: ArticleDetailsCommentsSchema;
   editableProfile?: EditableProfileSchema;
 }
 

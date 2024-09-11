@@ -1,4 +1,5 @@
 export const AvatarSizes = {
+  XS: 'xs',
   MD: 'md',
   SM: 'sm',
   LG: 'lg',

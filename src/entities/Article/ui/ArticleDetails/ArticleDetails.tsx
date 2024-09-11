@@ -20,6 +20,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -56,9 +57,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
+  useInitialEffect(() => {
     dispatch(fetchArticleById(id));
-  }, [dispatch, id]);
+  });
 
   let content;
 
@@ -136,7 +137,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         </div>
 
         <div className={cls.blocks}>
-          {article?.blocks.map((block) => (
+          {article?.blocks?.map((block) => (
             renderComponent(block)
           ))}
         </div>
