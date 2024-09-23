@@ -40,7 +40,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
 
-  useDynamicModuleLoader({ reducers: initialReducers, removeAfterUnmount: true });
+  useDynamicModuleLoader({ reducers: initialReducers });
 
   const renderComponent = useCallback((block: ArticleBlock) => {
     switch (block.type) {

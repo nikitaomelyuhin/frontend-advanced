@@ -4,6 +4,7 @@ import { validateProfileData } from './validateProfileData';
 import { ValidateProfileError } from '../../types/profile';
 
 const data = {
+  id: '1',
   first: 'Nikita',
   lastname: 'Omelyukhin',
   age: 30,

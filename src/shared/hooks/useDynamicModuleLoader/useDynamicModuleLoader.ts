@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { ReduxStoreWithManager, StateSchemaKeys } from '@/shared/providers/StoreProvider/config/StateSchema';
-import { DynamicModuleLoaderParams, ReducersListEntry } from '../useDynamicModuleLoader.types';
+import { DynamicModuleLoaderParams } from '../useDynamicModuleLoader.types';
 
 export const useDynamicModuleLoader = (params: DynamicModuleLoaderParams) => {
   const {
     reducers,
-    removeAfterUnmount,
+    removeAfterUnmount = true,
   } = params;
 
   const store = useStore() as ReduxStoreWithManager;

@@ -14,6 +14,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { AddCommentForm } from '@/features/AddCommentForm';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -31,7 +32,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-  useDynamicModuleLoader({ reducers: initialReducers, removeAfterUnmount: true });
+  useDynamicModuleLoader({ reducers: initialReducers });
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -52,6 +53,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         className={cls.commentTitle}
         title={t('Comments')}
       />
+      <AddCommentForm />
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}

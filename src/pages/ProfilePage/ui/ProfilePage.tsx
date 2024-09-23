@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ProfilePage.module.scss';
 import { ReducersList } from '@/shared/hooks/useDynamicModuleLoader.types';
@@ -7,6 +7,7 @@ import { useDynamicModuleLoader } from '@/shared/hooks/useDynamicModuleLoader/us
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { EditableProfileCard, editableProfileReducer } from '@/features/EditableProfileCard';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
 
 interface ProfilePageProps {
   className?: string;
@@ -20,13 +21,15 @@ const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props;
   const dispatch = useAppDispatch();
 
-  useDynamicModuleLoader({ reducers, removeAfterUnmount: true });
+  const { id } = useParams<{id: string}>();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfile());
-    }
-  }, [dispatch]);
+  useDynamicModuleLoader({ reducers, removeAfterUnmount: false });
+
+  useInitialEffect(() => {
+    if (!id) return;
+
+    dispatch(fetchProfile(id));
+  });
 
   return (
     <div className={classNames(cls.profilePage, {}, [className])}>

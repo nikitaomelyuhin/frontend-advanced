@@ -34,7 +34,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdat": "26.02.2022",
-      "type": ["it"],
+      "type": [
+        "it"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -121,6 +123,12 @@
       "text": "another 3 comment about post 1",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "111",
+      "id": "vfJjzHh"
     }
   ],
   "users": [
@@ -133,20 +141,34 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "bob",
       "password": "123",
       "role": "USER",
-      "avatar": "https://www.koimoi.com/wp-content/new-galleries/2023/06/fast-x-vin-diesels-dom-torreto-has-super-powers-in-the-fast-furious-movies-001.jpg"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8g7xO0Lfm7j3EUeaOO2giv2g0C9_gZpgAg&s"
     }
   ],
-  "profile": {
-    "first": "Nikita",
-    "lastname": "Omelyukhin",
-    "age": 30,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://kartinki.pics/uploads/posts/2022-02/1645857326_1-kartinkin-net-p-dzherri-kartinki-1.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Nikita",
+      "lastname": "Omelyukhin",
+      "age": 30,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://kartinki.pics/uploads/posts/2022-02/1645857326_1-kartinkin-net-p-dzherri-kartinki-1.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Bob",
+      "lastname": "Dylan",
+      "age": 50,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Miami",
+      "username": "bob",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8g7xO0Lfm7j3EUeaOO2giv2g0C9_gZpgAg&s"
+    }
+  ]
 }
