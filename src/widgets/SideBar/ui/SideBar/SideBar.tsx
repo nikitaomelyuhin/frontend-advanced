@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './SideBar.module.scss';
 import { Button } from '@/shared/ui/Button/Button';
@@ -8,8 +8,8 @@ import SvgArrowRight from '@/shared/assets/icons/arrow-right.svg';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { ButtonSize, ButtonThemes } from '@/shared/ui/Button/Button.types';
-import { sideBarItems } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { getSidebarItem } from '../../model/selectors/getSidebarItem';
 
 interface SideBarProps {
   className?: string;
@@ -17,6 +17,8 @@ interface SideBarProps {
 
 export const SideBar = (props: SideBarProps) => {
   const { className } = props;
+
+  const sideBarItems = useSelector(getSidebarItem);
 
   const [collapsed, setCollapsed] = useState(false);
 
