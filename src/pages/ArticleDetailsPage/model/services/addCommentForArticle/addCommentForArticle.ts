@@ -3,16 +3,15 @@ import i18n from '@/app/config/i18n/i18n';
 import { ThunkConfig } from '@/shared/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
 import { getUserAuthData } from '@/entities/User';
-import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
 import { getArticleDetailsData } from '@/entities/Article';
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const sendComment = createAsyncThunk<Comment, void, ThunkConfig<string>>(
-  'addCommentForm/sendComment',
-  async (_, {
+export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
+  'articleDetails/addCommentForArticle',
+  async (text, {
     rejectWithValue, dispatch, extra, getState,
   }) => {
     const userData = getUserAuthData(getState());
-    const text = getAddCommentFormText(getState());
     const article = getArticleDetailsData(getState());
 
     if (!userData || !text || !article) {
@@ -29,6 +28,8 @@ export const sendComment = createAsyncThunk<Comment, void, ThunkConfig<string>>(
       if (!response.data) {
         throw new Error();
       }
+
+      dispatch(fetchCommentsByArticleId(article.id));
 
       return response.data;
     } catch (e) {

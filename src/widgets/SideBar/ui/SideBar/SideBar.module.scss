@@ -4,6 +4,7 @@
   width: var(--sidebar-width);
   transition: width 0.3s ease;
   background-color: var(--nav-bar-bg-color);
+  flex-shrink: 0;
 }
 
 .collapsed {

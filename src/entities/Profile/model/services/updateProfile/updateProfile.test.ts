@@ -12,6 +12,7 @@ const data = {
   avatar: 'https://kartinki.pics/uploads/posts/2022-02/1645857326_1-kartinkin-net-p-dzherri-kartinki-1.jpg',
   currency: Currency.RUB,
   country: Country.Russia,
+  id: '1',
 };
 describe('updateProfile', () => {
   test('success', async () => {

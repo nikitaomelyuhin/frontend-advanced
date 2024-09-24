@@ -129,6 +129,18 @@
       "userId": "1",
       "text": "111",
       "id": "vfJjzHh"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ss",
+      "id": "Je3h9hB"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdf",
+      "id": "ugYfOn2"
     }
   ],
   "users": [
@@ -155,7 +167,7 @@
       "age": 30,
       "currency": "RUB",
       "country": "Russia",
-      "city": "Moscow",
+      "city": "Moscow1",
       "username": "admin",
       "avatar": "https://kartinki.pics/uploads/posts/2022-02/1645857326_1-kartinkin-net-p-dzherri-kartinki-1.jpg"
     },
