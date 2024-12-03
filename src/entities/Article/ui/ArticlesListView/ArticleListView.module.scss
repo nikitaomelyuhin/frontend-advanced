@@ -1,0 +1,8 @@
+.article-list-view {
+  display: flex;
+  gap: 3px;
+}
+
+.selected {
+  fill: var(--active-color);
+}

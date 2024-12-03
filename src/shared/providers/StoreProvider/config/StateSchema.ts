@@ -10,6 +10,7 @@ import { EditableProfileSchema } from '@/features/EditableProfileCard';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticleDetailsCommentsSchema } from '@/pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -19,6 +20,7 @@ export interface StateSchema {
   login?: LoginSchema;
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
+  articlesPage?: ArticlesPageSchema;
   editableProfile?: EditableProfileSchema;
   addCommentForm?: AddCommentFormSchema;
 }

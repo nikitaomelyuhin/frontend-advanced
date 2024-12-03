@@ -40,6 +40,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-unused-vars': 'off',
     'i18next/no-literal-string': 'off',
+    'react/no-array-index-key': 'off',
     'max-len': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
