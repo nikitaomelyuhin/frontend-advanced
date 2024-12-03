@@ -14,19 +14,19 @@ export const addCommentFormSlice = createSlice({
       state.text = action.payload;
     },
   },
-  extraReducers: (builder) => {
-    // builder.addCase(loginByUsername.pending, (state, action) => {
-    //   state.error = undefined;
-    //   state.isLoading = true;
-    // });
-    // builder.addCase(loginByUsername.fulfilled, (state, action) => {
-    //   state.isLoading = false;
-    // });
-    // builder.addCase(loginByUsername.rejected, (state, action) => {
-    //   state.isLoading = false;
-    //   state.error = action.payload;
-    // });
-  },
+  // extraReducers: (builder) => {
+  //   // builder.addCase(loginByUsername.pending, (state, action) => {
+  //   //   state.error = undefined;
+  //   //   state.isLoading = true;
+  //   // });
+  //   // builder.addCase(loginByUsername.fulfilled, (state, action) => {
+  //   //   state.isLoading = false;
+  //   // });
+  //   // builder.addCase(loginByUsername.rejected, (state, action) => {
+  //   //   state.isLoading = false;
+  //   //   state.error = action.payload;
+  //   // });
+  // },
 });
 
 export const { actions: addCommentFormActions } = addCommentFormSlice;
