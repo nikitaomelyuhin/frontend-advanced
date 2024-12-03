@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
@@ -16,6 +16,9 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { Button } from '@/shared/ui/Button/Button';
+import { ButtonThemes } from '@/shared/ui/Button/Button.types';
+import { RoutePath } from '@/shared/constants/router';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -30,6 +33,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const { id } = useParams<{id: string}>();
+
+  const navigate = useNavigate();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
@@ -43,6 +48,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(addCommentForArticle(value));
   }, [dispatch]);
 
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
+
   if (!id) {
     return (
       <div className={classNames(cls.articleDetailsPage, {}, [className])}>
@@ -53,6 +62,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Button theme={ButtonThemes.OUTLINE} onClick={onBackToList}>
+        {t('Back to list')}
+      </Button>
       <ArticleDetails id={id} />
       <Text
         className={cls.commentTitle}

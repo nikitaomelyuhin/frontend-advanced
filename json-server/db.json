@@ -33,7 +33,8 @@
       "subtitle": "что нового в js за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdat": "26.02.2022",
+      "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "it"
       ],

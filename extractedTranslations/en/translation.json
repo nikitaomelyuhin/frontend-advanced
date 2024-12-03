@@ -5,6 +5,7 @@
   "Article not found": "Article not found",
   "Articles page": "Articles page",
   "Authorization form": "Authorization form",
+  "Back to list": "Back to list",
   "Cancel": "",
   "Cannot fetch profile data": "",
   "Cannot get profile data": "Cannot get profile data",
@@ -27,6 +28,13 @@
   "No comments": "No comments",
   "Not found": "Not found",
   "Profile": "",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Reload page": "Reload page",
   "Save": "",
   "Send": "Send",
