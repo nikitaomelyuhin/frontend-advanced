@@ -19,6 +19,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { Button } from '@/shared/ui/Button/Button';
 import { ButtonThemes } from '@/shared/ui/Button/Button.types';
 import { RoutePath } from '@/shared/constants/router';
+import { Page } from '@/shared/ui/Page/Page';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -61,7 +62,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   }
 
   return (
-    <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+    <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
       <Button theme={ButtonThemes.OUTLINE} onClick={onBackToList}>
         {t('Back to list')}
       </Button>
@@ -77,7 +78,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         isLoading={commentsIsLoading}
         comments={comments}
       />
-    </div>
+    </Page>
   );
 };
 

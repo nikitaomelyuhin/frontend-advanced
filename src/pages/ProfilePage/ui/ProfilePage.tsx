@@ -9,9 +9,8 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { EditableProfileCard, editableProfileReducer } from '@/features/EditableProfileCard';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
-import { getEditableProfileData } from '@/features/EditableProfileCard/model/selectors/getEditableProfileData/getEditableProfileData';
-import { getUserAuthData } from '@/entities/User';
 import { getCanEdit } from '../model/selectors/canEdit';
+import { Page } from '@/shared/ui/Page/Page';
 
 interface ProfilePageProps {
   className?: string;
@@ -37,11 +36,11 @@ const ProfilePage = (props: ProfilePageProps) => {
   });
 
   return (
-    <div className={classNames(cls.profilePage, {}, [className])}>
+    <Page className={classNames(cls.profilePage, {}, [className])}>
       {canEdit && <ProfilePageHeader />}
 
       <EditableProfileCard />
-    </div>
+    </Page>
   );
 };
 

@@ -19,23 +19,6 @@ export const ArticleList = (props: ArticleListProps) => {
     view = ArticleView.SMALL,
   } = props;
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-        {
-          new Array(view === ArticleView.SMALL ? 9 : 3)
-            .fill(0)
-            .map((_, index) => (
-              <ArticleListItemSkeleton
-                key={index}
-                view={view}
-              />
-            ))
-        }
-      </div>
-    );
-  }
-
   const renderArticle = (article: Article) => {
     return (
       <ArticleListItem
@@ -51,6 +34,20 @@ export const ArticleList = (props: ArticleListProps) => {
       {articles.length
         ? articles.map(renderArticle)
         : null}
+      {isLoading && (
+        <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+          {
+            new Array(view === ArticleView.SMALL ? 9 : 3)
+              .fill(0)
+              .map((_, index) => (
+                <ArticleListItemSkeleton
+                  key={index}
+                  view={view}
+                />
+              ))
+          }
+        </div>
+      )}
     </div>
   );
 };

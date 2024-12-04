@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './MainPage.module.scss';
 import { Input } from '@/shared/ui/Input/Input';
+import { Page } from '@/shared/ui/Page/Page';
 
 interface MainPageProps {
   className?: string;
@@ -18,14 +19,14 @@ const MainPage = (props: MainPageProps) => {
   };
 
   return (
-    <div className={classNames(cls.MainPage, {}, [className])}>
+    <Page className={classNames(cls.MainPage, {}, [className])}>
       {t('Main page')}
       <Input
         value={value}
         onChange={onChange}
         placeholder="Введите текст"
       />
-    </div>
+    </Page>
   );
 };
 
