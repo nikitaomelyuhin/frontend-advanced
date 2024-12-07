@@ -1,21 +1,21 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticlesPage.module.scss';
 import {
   ArticleList, ArticleListView, ArticleView,
 } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { ReducersList } from '@/shared/hooks/useDynamicModuleLoader.types';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice/articlesPageSlice';
 import { useDynamicModuleLoader } from '@/shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/shared/ui/Page/Page';
 import {
   getArticlesPageLoading, getArticlesPageView,
 } from '../../model/selectors/articlesListSelectors';
-import { Page } from '@/shared/ui/Page/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice/articlesPageSlice';
+import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
   className?: string;
@@ -32,11 +32,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageLoading);
   const view = useSelector(getArticlesPageView);
 
-  useDynamicModuleLoader({ reducers: initialReducers });
+  useDynamicModuleLoader({ reducers: initialReducers, removeAfterUnmount: false });
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const onChangeView = useCallback((view: ArticleView) => {
