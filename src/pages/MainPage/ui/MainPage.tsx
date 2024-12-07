@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './MainPage.module.scss';
 import { Input } from '@/shared/ui/Input/Input';
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/widgets/Page';
 
 interface MainPageProps {
   className?: string;

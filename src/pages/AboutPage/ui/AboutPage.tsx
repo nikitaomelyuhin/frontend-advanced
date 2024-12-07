@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AboutPage.module.scss';
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/widgets/Page';
 
 interface AboutPageProps {
     className?: string;

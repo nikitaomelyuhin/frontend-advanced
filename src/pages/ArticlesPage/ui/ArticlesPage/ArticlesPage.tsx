@@ -8,7 +8,7 @@ import { ReducersList } from '@/shared/hooks/useDynamicModuleLoader.types';
 import { useDynamicModuleLoader } from '@/shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/widgets/Page';
 import {
   getArticlesPageLoading, getArticlesPageView,
 } from '../../model/selectors/articlesListSelectors';

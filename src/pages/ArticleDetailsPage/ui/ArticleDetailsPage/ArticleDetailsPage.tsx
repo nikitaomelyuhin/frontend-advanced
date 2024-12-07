@@ -19,7 +19,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { Button } from '@/shared/ui/Button/Button';
 import { ButtonThemes } from '@/shared/ui/Button/Button.types';
 import { RoutePath } from '@/shared/constants/router';
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
   className?: string;

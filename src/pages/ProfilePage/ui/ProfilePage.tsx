@@ -10,7 +10,7 @@ import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { EditableProfileCard, editableProfileReducer } from '@/features/EditableProfileCard';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useIntialEffect';
 import { getCanEdit } from '../model/selectors/canEdit';
-import { Page } from '@/shared/ui/Page/Page';
+import { Page } from '@/widgets/Page';
 
 interface ProfilePageProps {
   className?: string;
