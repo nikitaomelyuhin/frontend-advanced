@@ -29,11 +29,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "javascript news",
-      "subtitle": "что нового в js за 2022 год?",
+      "title": "JavaScript news",
+      "subtitle": "Что такое JS",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5022,
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "it"
@@ -102,10 +102,10 @@
     {
       "id": "2",
       "title": "Python news",
-      "subtitle": "что нового в python за 2022 год?",
+      "subtitle": "Что нового в python за 2023 год?",
       "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 202544,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
         "it"
@@ -173,10 +173,10 @@
     },
     {
       "id": "3",
-      "title": "C++ news",
-      "subtitle": "что нового в c++ за 2022 год?",
+      "title": "C++",
+      "subtitle": "Что это?",
       "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
+      "views": 1022123,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -245,11 +245,11 @@
     },
     {
       "id": "4",
-      "title": "javascript news",
-      "subtitle": "что нового в js за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Kotlin",
+      "subtitle": "Kotlin news?",
+      "img": "https://www.mailslurp.com/assets/kotlin-smtp-library.jpg",
+      "views": 20,
+      "createdAt": "21.09.1999",
       "userId": "1",
       "type": [
         "it"
@@ -269,10 +269,10 @@
     },
     {
       "id": "5",
-      "title": "Python news",
-      "subtitle": "что нового в python за 2022 год?",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 1022,
+      "title": "Ruby news",
+      "subtitle": "что нового в ruby за 2022 год?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy35KwYwXp4nrywszEgjE3vZ0fW-FD6GtEHA&s",
+      "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -293,11 +293,11 @@
     },
     {
       "id": "6",
-      "title": "C++ news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Swift",
+      "subtitle": "что нового в swift за 2022 год?",
+      "img": "https://developer.apple.com/swift/images/swift-og.png",
+      "views": 102200,
+      "createdAt": "06.05.2023",
       "userId": "1",
       "type": [
         "it"
@@ -317,11 +317,11 @@
     },
     {
       "id": "7",
-      "title": "111C++ news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
+      "title": "C#",
+      "subtitle": "что нового в c# за 2023 год?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6mDvl9odi-fcxjY7S1HItDwaizVfRbatVQ&s",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
         "it"
@@ -341,10 +341,10 @@
     },
     {
       "id": "8",
-      "title": "222C++ news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
+      "title": "Typescript news",
+      "subtitle": "Что такое typescript",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBnbCVrQUxXmIED__a00_uoUcRcfm9lYjEg&s",
+      "views": 1222123,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -365,11 +365,11 @@
     },
     {
       "id": "9",
-      "title": "C+++++ news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Scss новое",
+      "subtitle": "Новые функции Scss",
+      "img": "https://i0.wp.com/techprimelab.com/wp-content/uploads/2020/06/SCSS-or-CSS.jpg?fit=1024%2C576&ssl=1",
+      "views": 1022123,
+      "createdAt": "23.05.2024",
       "userId": "1",
       "type": [
         "it"
@@ -389,11 +389,11 @@
     },
     {
       "id": "10",
-      "title": "C+-+ news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "PHP",
+      "subtitle": "Смерть php",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl-BTO-4AKJHwL4sXUk3HsxU0rW7M4UZFnrw&s",
+      "views": 8994,
+      "createdAt": "26.12.2023",
       "userId": "1",
       "type": [
         "it"
@@ -413,11 +413,11 @@
     },
     {
       "id": "11",
-      "title": "C+-sharp news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "GO lang",
+      "subtitle": "что нового в go за 2022 год?",
+      "img": "https://www.freecodecamp.org/news/content/images/2021/10/golang.png",
+      "views": 102,
+      "createdAt": "16.11.2022",
       "userId": "1",
       "type": [
         "it"
@@ -437,11 +437,11 @@
     },
     {
       "id": "12",
-      "title": "C-- news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Vue 3 урок",
+      "subtitle": "Как создать компонент",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMd7it6xF6XPpXSQB8UR5_ByMGm0qYMkpNEA&s",
+      "views": 1022111,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
         "it"
@@ -461,9 +461,9 @@
     },
     {
       "id": "13",
-      "title": "CC+ news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
+      "title": "Angular",
+      "subtitle": "Как выжить",
+      "img": "https://blog.skillfactory.ru/wp-content/uploads/2023/02/2048px-angular_full_color_logo.svg-6022679.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -485,11 +485,11 @@
     },
     {
       "id": "14",
-      "title": "C+C=CC news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "React",
+      "subtitle": "Супер новости",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCelkmWfnQkGmyWNujbuC9mF04Ww5rGRN1vA&s",
+      "views": 10222123,
+      "createdAt": "01.01.2024",
       "userId": "1",
       "type": [
         "it"
@@ -509,11 +509,11 @@
     },
     {
       "id": "15",
-      "title": "C-C=--C news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Figma",
+      "subtitle": "Что нужно для разработчика",
+      "img": "https://img.uxcel.com/tags/figma-1698087967030-2x.jpg",
+      "views": 5001,
+      "createdAt": "12.02.2023",
       "userId": "1",
       "type": [
         "it"
@@ -533,11 +533,11 @@
     },
     {
       "id": "16",
-      "title": "C news",
-      "subtitle": "что нового в c++ за 2022 год?",
-      "img": "https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Webpack",
+      "subtitle": "Почему не vite?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRbX0i4MPhvuxjxXTiud5Ztvb5hrNJQ7I9PA&s",
+      "views": 2003,
+      "createdAt": "12.04.2024",
       "userId": "1",
       "type": [
         "it"

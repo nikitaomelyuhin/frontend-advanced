@@ -1,5 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import {
   ArticleList, ArticleListView, ArticleView,
 } from '@/entities/Article';
@@ -16,6 +17,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 interface ArticlesPageProps {
   className?: string;
@@ -31,16 +33,13 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageLoading);
   const view = useSelector(getArticlesPageView);
+  const [searchParams] = useSearchParams();
 
   useDynamicModuleLoader({ reducers: initialReducers, removeAfterUnmount: false });
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
-
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view));
-  }, [dispatch]);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
@@ -51,14 +50,12 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       className={classNames(cls.articlesPage, {}, [className])}
       onScrollEnd={onLoadNextPart}
     >
-      <ArticleListView
-        view={view}
-        onClickView={onChangeView}
-      />
+      <ArticlesPageFilters />
       <ArticleList
         isLoading={isLoading}
         view={view}
         articles={articles}
+        className={cls.list}
       />
     </Page>
   );
