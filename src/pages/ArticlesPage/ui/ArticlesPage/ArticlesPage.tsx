@@ -15,7 +15,7 @@ import {
 } from '../../model/selectors/articlesListSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice/articlesPageSlice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 

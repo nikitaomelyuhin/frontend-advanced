@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Text } from '@/shared/ui/Text/Text';
+import { TextSizes } from '@/shared/ui/Text/Text.types';
 
 interface ArticleListProps {
   className?: string;
@@ -19,6 +22,8 @@ export const ArticleList = (props: ArticleListProps) => {
     view = ArticleView.SMALL,
   } = props;
 
+  const { t } = useTranslation();
+
   const renderArticle = (article: Article) => {
     return (
       <ArticleListItem
@@ -28,6 +33,16 @@ export const ArticleList = (props: ArticleListProps) => {
       />
     );
   };
+
+  if (!isLoading && !articles.length) {
+    return (
+      <Text
+        className={cls.noData}
+        title={t('Articles not found')}
+        size={TextSizes.L}
+      />
+    );
+  }
 
   return (
     <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
