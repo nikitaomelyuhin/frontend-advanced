@@ -3,8 +3,16 @@
   height: var(--navbar-height);
   background-color: var(--nav-bar-bg-color);
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 10px;
   padding: 0 20px;
+}
+
+.links {
+  margin-left: auto;
+}
+
+.app-name {
+  width: var(--sidebar-width);
+  margin-left: 15px;
 }

@@ -6,6 +6,7 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
@@ -33,6 +34,16 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.ARTICLE_DETAILS]: {
     path: RoutePath[AppRoutes.ARTICLE_DETAILS],
     element: <ArticleDetailsPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_CREATE]: {
+    path: RoutePath[AppRoutes.ARTICLE_CREATE],
+    element: <ArticleEditPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_EDIT]: {
+    path: RoutePath[AppRoutes.ARTICLE_EDIT],
+    element: <ArticleEditPage />,
     authOnly: true,
   },
   // last

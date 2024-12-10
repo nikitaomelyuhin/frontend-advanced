@@ -1,6 +1,7 @@
 export const TextThemes = {
   PRIMARY: 'primary',
   ERROR: 'error',
+  INVERTED: 'inverted',
 } as const;
 
 export type TextTheme = UnionType<typeof TextThemes>;
