@@ -5,3 +5,14 @@
 .comment-title {
   margin-top: 20px;
 }
+
+.recommendations {
+  margin-top: 20px;
+  
+}
+
+.recommendations-list {
+  overflow-y: hidden;
+  overflow-x: auto;
+  flex-wrap: nowrap !important;
+}

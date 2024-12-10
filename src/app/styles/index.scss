@@ -20,5 +20,25 @@ body {
 
 .content-body {
   flex: 1;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
   height: calc(100vh - var(--navbar-height));
+}
+
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color);
+  border-radius: 3px;
+  border: 2px solid var(--primary-color);
 }

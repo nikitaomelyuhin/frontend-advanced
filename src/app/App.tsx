@@ -24,9 +24,7 @@ const App = () => {
         <Header />
         <div className="content">
           <SideBar />
-          <div className="content-body">
-            {inited && <AppRouter />}
-          </div>
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>
